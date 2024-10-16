@@ -1,19 +1,19 @@
-# kriptographi_playfairchiper
-|NAMA : RAHMAT HIDAYAT|
-|NIM  : 312210565|
-|KELAS : TI.22.A.5|
+    # kriptographi_playfairchiper
+    |NAMA : RAHMAT HIDAYAT|
+    |NIM  : 312210565|
+    |KELAS : TI.22.A.5|
 
-import numpy as np
+    import numpy as np
 
-# Generate the Playfair matrix
-def generate_playfair_matrix(key):
+    # Generate the Playfair matrix
+    def generate_playfair_matrix(key):
     key = ''.join(sorted(set(key), key=key.index)).replace('J', 'I')  # Remove duplicates and replace J with I
     alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
     matrix = key + ''.join([c for c in alphabet if c not in key])
     return np.array([list(matrix[i:i + 5]) for i in range(0, 25, 5)])
 
-# Preprocess the text (for both encryption and decryption)
-def preprocess_text(text):
+    # Preprocess the text (for both encryption and decryption)
+    def preprocess_text(text):
     text = text.replace('J', 'I').replace(' ', '').upper()
     processed_text = ''
     i = 0
@@ -29,13 +29,13 @@ def preprocess_text(text):
         processed_text += 'X'
     return processed_text
 
-# Find position of the character in the matrix
-def find_position(matrix, char):
+    # Find position of the character in the matrix
+    def find_position(matrix, char):
     pos = np.where(matrix == char)
     return pos[0][0], pos[1][0]
 
-# Encrypt using Playfair Cipher
-def playfair_encrypt(plaintext, key):
+    # Encrypt using Playfair Cipher
+    def playfair_encrypt(plaintext, key):
     matrix = generate_playfair_matrix(key)
     plaintext = preprocess_text(plaintext)
     ciphertext = ''
@@ -56,8 +56,8 @@ def playfair_encrypt(plaintext, key):
     
     return ciphertext
 
-# Decrypt using Playfair Cipher
-def playfair_decrypt(ciphertext, key):
+    # Decrypt using Playfair Cipher
+    def playfair_decrypt(ciphertext, key):
     matrix = generate_playfair_matrix(key)
     plaintext = ''
     
@@ -77,16 +77,16 @@ def playfair_decrypt(ciphertext, key):
     
     return plaintext
 
-# Main
-key = "TEKNIKINFORMATIKA"
-texts = [
+    # Main
+    key = "TEKNIKINFORMATIKA"
+    texts = [
     "GOOD BROOM SWEEP CLEAN",
     "REDWOOD NATIONAL STATE PARK",
     "JUNK FOOD AND HEALTH PROBLEMS"
-]
+    ]
 
-print("Encryption and Decryption using Playfair Cipher with key:", key)
-for text in texts:
+    print("Encryption and Decryption using Playfair Cipher with key:", key)
+    for text in texts:
     encrypted = playfair_encrypt(text, key)
     decrypted = playfair_decrypt(encrypted, key)
     
@@ -94,3 +94,5 @@ for text in texts:
     print(f"Encrypted: {encrypted}")
     print(f"Decrypted: {decrypted}")
     print("----------")
+    #Hasil output
+    ![Screenshot 2024-10-16 151540](https://github.com/user-attachments/assets/7e1fec51-0f8c-49b6-8b0c-ba30f1416563)
