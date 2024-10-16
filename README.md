@@ -1,7 +1,7 @@
 # kriptographi_playfairchiper
-|NAMA : RAHMAT HIDAYAT|
-|NIM  : 312210565|
-|KELAS : TI.22.A.5|
+# |NAMA : RAHMAT HIDAYAT|
+# |NIM  : 312210565|
+# |KELAS : TI.22.A.5|
 
 # CODINGAN 
     import numpy as np
@@ -97,4 +97,5 @@
     print("----------")
     
 #Hasil output
+
 ![Screenshot 2024-10-16 151540](https://github.com/user-attachments/assets/7e1fec51-0f8c-49b6-8b0c-ba30f1416563)
